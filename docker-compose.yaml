@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  rcdpt:
+    image: rcdpt
+    build: .
+    #command: nvidia-smi
+    privileged: true
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/ws/rcdpt
+      - /media/stannyho/Expansion1/DORN_radar/Lidar_gt:/ws/rcdpt/samples
+    runtime: nvidia
+ 
+
